@@ -1,15 +1,12 @@
-name: 'Hello; time'
-description: 'Greet and record time'
+name: 'Validate JSON files'
+description: 'Syntax validation'
 inputs:
-    who-to-greet:
-        description: 'Who to greet'
+    directory:
+        description: 'Directory with json files'
         required: true
-        default: 'World'
-outputs:
-    time:
-        description: 'The time we greeted you'
+        default: '.'
 runs:
     using: 'docker'
     image: 'Dockerfile'
     args: 
-        - ${{ inputs.who-to-greet }}
+        - ${{ inputs.directory }}
