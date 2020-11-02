@@ -10,4 +10,3 @@ COPY src/dev/buildtool/validator/Validator.java /run/dev/buildtool/validator/Val
 RUN ["javac", "-cp", "/run/json-tools-0.2.0.jar", "/run/dev/buildtool/validator/Validator.java"]
 ARG directory
 ENTRYPOINT ["java","-classpath","/run/json-tools-0.2.0.jar:/run","dev.buildtool.validator.Validator"]
-#CMD ["java","-classpath","/run/json-tools-0.2.0.jar","/dev.buildtool.validator.Validator"]
