@@ -12,6 +12,8 @@ public class Validator {
     public static void main(String[] args)
     {
         if(args.length>0) {
+            System.out.println(System.getenv("GITHUB_REPOSITORY"));
+            System.out.println(System.getenv("GITHUB_SERVER_URL"));
             String directory=args[0];
             Path pathDir= Paths.get(directory);
             if(Files.isDirectory(pathDir)) {

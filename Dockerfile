@@ -1,8 +1,3 @@
-#FROM alpine:3.10
-#COPY entrypoint.sh /entrypoint.sh
-#RUN chmod +x /entrypoint.sh
-#ENTRYPOINT ["/entrypoint.sh"]
-
 FROM openjdk:9
 WORKDIR /run
 COPY lib/json-tools-0.2.0.jar /run/json-tools-0.2.0.jar
