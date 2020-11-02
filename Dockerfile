@@ -3,7 +3,7 @@
 #RUN chmod +x /entrypoint.sh
 #ENTRYPOINT ["/entrypoint.sh"]
 
-FROM openjdk:8
+FROM openjdk:9
 WORKDIR /run
 COPY lib/json-tools-0.2.0.jar /run/json-tools-0.2.0.jar
 COPY src/dev/buildtool/validator/Validator.java /run/dev/buildtool/validator/Validator.java
