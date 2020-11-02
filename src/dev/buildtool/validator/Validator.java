@@ -18,7 +18,7 @@ public class Validator {
             String refOrBranch=System.getenv("GITHUB_REF");
             System.out.println(server+"/"+repository);
             System.out.println(workspace);
-            System.out.println(refOrBranch);
+            System.out.println(refOrBranch.substring(refOrBranch.lastIndexOf('/')));
             String directory=args[0];
             Path pathDir= Paths.get(directory);
             if(Files.isDirectory(pathDir)) {
