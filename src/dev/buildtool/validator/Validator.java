@@ -17,15 +17,17 @@ public class Validator {
             if(Files.isDirectory(pathDir)) {
                 try {
                     Files.list(pathDir).forEach(path -> {
-                        String json=Json5Parser.readJson(pathDir, false);
-                        if(json!=null)
-                        {
-                            try {
-                                new Json5Parser(json).parse();
-                                System.out.println("File "+path.getFileName()+" validated.");
-                            } catch (Json5SyntaxError json5SyntaxError) {
-                                json5SyntaxError.printStackTrace();
-                                System.out.println("File "+path.getFileName()+" is incorrect");
+                        String name=path.getFileName().toString();
+                        if(name.endsWith(".json") || name.endsWith(".json5")) {
+                            String json = Json5Parser.readJson(pathDir, false);
+                            if (json != null) {
+                                try {
+                                    new Json5Parser(json).parse();
+                                    System.out.println("File " + path.getFileName() + " validated.");
+                                } catch (Json5SyntaxError json5SyntaxError) {
+                                    json5SyntaxError.printStackTrace();
+                                    System.out.println("File " + path.getFileName() + " is incorrect");
+                                }
                             }
                         }
                     });
